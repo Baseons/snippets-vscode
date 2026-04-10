@@ -21,19 +21,9 @@
 
   @csrf
 
-  @php @endphp
 
-  @if('dition')
+  @foreach(item as list)
 
-  @endif
-
-  @if(!empty())
-
-  @endif
-
-  @foreach ()
-  @break
-  @continue
   @endforeach
 
   <script>
