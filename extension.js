@@ -14,10 +14,12 @@ function activate(context) {
                 const formatOptions = {
                     indent_size: options.tabSize,
                     indent_char: options.insertSpaces ? ' ' : '\t',
-                    wrap_line_length: 120,
+                    wrap_line_length: 0,
                     preserve_newlines: true,
                     max_preserve_newlines: 2,
-                    end_with_newline: true
+                    end_with_newline: true,
+                    indent_scripts: "normal",
+                    indent_inner_html: true
                 };
 
                 // Aplica a formatação HTML ao texto
