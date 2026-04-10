@@ -1,0 +1,142 @@
+{
+  "name": "Baseons",
+  "scopeName": "text.html.baseons",
+  "fileTypes": ["bns.php", "html.php"],
+  "patterns": [
+    { "include": "#baseons-comment" },
+    { "include": "#baseons-echo" },
+    { "include": "#baseons-php-block" },
+    { "include": "#baseons-directive" },
+    { "include": "#baseons-script" },
+    { "include": "#baseons-style" },
+    { "include": "text.html.basic" }
+
+  ],
+  "repository": {
+    "baseons-comment": {
+      "patterns": [
+        {
+          "name": "comment.block.baseons",
+          "begin": "\\{\\{--",
+          "end": "--\\}\\}"
+        }
+      ]
+    },
+
+    "baseons-echo": {
+      "patterns": [
+        {
+          "name": "meta.embedded.block.php.baseons",
+          "begin": "\\{\\{",
+          "beginCaptures": {
+            "0": { "name": "punctuation.section.embedded.begin.baseons" }
+          },
+          "end": "\\}\\}",
+          "endCaptures": {
+            "0": { "name": "punctuation.section.embedded.end.baseons" }
+          },
+          "patterns": [
+            {
+              "include": "source.php"
+            }
+          ]
+        }
+      ]
+    },
+
+    "baseons-php-block": {
+      "patterns": [
+        {
+          "name": "meta.embedded.block.php.baseons",
+          "begin": "@php",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.begin.baseons"
+            }
+          },
+          "end": "@endphp",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.end.baseons"
+            }
+          },
+          "patterns": [
+            {
+              "include": "source.php"
+            }
+          ]
+        }
+      ]
+    },
+
+    "baseons-script": {
+      "patterns": [
+        {
+          "name": "meta.embedded.block.javascript.baseons",
+          "begin": "<script[^>]*>",
+          "beginCaptures": {
+            "0": { "name": "entity.name.tag.script.html" }
+          },
+          "end": "</script>",
+          "endCaptures": {
+            "0": { "name": "entity.name.tag.script.html" }
+          },
+          "patterns": [
+            {
+              "include": "source.js.jsx"
+            },
+            {
+              "include": "source.js"
+            }
+          ]
+        }
+      ]
+    },
+
+    "baseons-style": {
+      "patterns": [
+        {
+          "name": "meta.embedded.block.css.baseons",
+          "begin": "<style[^>]*>",
+          "beginCaptures": {
+            "0": { "name": "entity.name.tag.style.html" }
+          },
+          "end": "</style>",
+          "endCaptures": {
+            "0": { "name": "entity.name.tag.style.html" }
+          },
+          "patterns": [
+            {
+              "include": "source.css"
+            }
+          ]
+        }
+      ]
+    },
+
+    "baseons-directive": {
+      "patterns": [
+        {
+          "begin": "(@(?:if|elseif|foreach|while|for|section|include|yield|url|route|csrf))\\s*(\\()",
+          "beginCaptures": {
+            "1": { "name": "keyword.control.baseons" },
+            "2": { "name": "punctuation.definition.parameters.begin.baseons" }
+          },
+          "end": "(\\))",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.parameters.end.baseons" }
+          },
+          "patterns": [
+            {
+              "include": "source.php"
+            }
+          ]
+        },
+        {
+          "name": "keyword.control.baseons",
+          "match": "@(?:if|else|elseif|foreach|while|for|endif|endfor|endforeach|section|endsection|endwhile|break|continue|include|yield|url|route|csrf|php|endphp)\\b"
+        }
+      ]
+    }
+  }
+}
