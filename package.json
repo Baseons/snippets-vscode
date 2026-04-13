@@ -4,7 +4,7 @@
   "description": "HTML-compatible snippets and syntax support for .bns.php files.",
   "version": "0.0.1",
   "publisher": "Baseons",
-  "icon": "images/icon.png",
+  "icon": "images/logo.png",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -37,8 +37,8 @@
         ],
         "configuration": "language-configuration.json",
         "icon": {
-          "light": "images/icon.png",
-          "dark": "images/icon.png"
+          "light": "images/logo.png",
+          "dark": "images/logo.png"
         }
       }
     ],

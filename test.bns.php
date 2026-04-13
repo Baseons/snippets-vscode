@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+  </head>
 
-<body>
+  <body>
 
-  @include('view')
+    @include('view')
 
-  @yield('name')
+    @yield('name')
 
-  @section('name') @endsection
+    @section('name') @endsection
 
-  @url() @url('path')
+    @url() @url('path')
 
-  @route()
+    @route()
 
-  @csrf
+    @csrf
 
-  @php @endphp
+    @php @endphp
 
-  @if('dition')
+    @if('dition')
 
-  @endif
+    @endif
 
-  @if(!empty())
+    @if(!empty())
 
-  @endif
+    @endif
 
-  @foreach ()
-  @break
-  @continue
-  @endforeach
-
-  <script>
-    let t = 'sdfasfsdff';
-
-    setTimeout(() => {
-
-    }, timeout);
-
-  </script>
+    @foreach ()
+    @break
+    @continue
+    @endforeach
 
 
-  <style>
-    body {}
+    <script>
+      let t = 'sdfasfsdff';
 
-  </style>
-  </style>
-</body>
+      setTimeout(() => {
+
+      }, timeout);
+
+    </script>
+
+
+    <style>
+      body {
+        color: red
+      }
+
+    </style>
+    </style>
+  </body>
 
 </html>
