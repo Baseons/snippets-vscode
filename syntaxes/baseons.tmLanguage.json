@@ -10,7 +10,6 @@
     { "include": "#baseons-script" },
     { "include": "#baseons-style" },
     { "include": "text.html.basic" }
-
   ],
   "repository": {
     "baseons-comment": {
